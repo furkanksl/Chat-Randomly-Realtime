@@ -1,15 +1,20 @@
 import { useEffect } from "react";
 import "./App.css";
+import initializeFirebase from "./base/fb.config";
 import ChatPage from "./pages/ChatPage";
-import initializeFirebase from "./services/firabse.service";
+import { getUserNickname } from "./services/local.service";
+import { MessagesContextProvider } from "./store/messages-context";
 
 function App() {
   useEffect(() => {
-    initializeFirebase();
+    // initializeFirebase();
+    getUserNickname();
   }, []);
   return (
     <div className="App">
-      <ChatPage />
+      <MessagesContextProvider>
+        <ChatPage />
+      </MessagesContextProvider>
     </div>
   );
 }
