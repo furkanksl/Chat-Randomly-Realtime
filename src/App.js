@@ -7,7 +7,6 @@ import { MessagesContextProvider } from "./store/messages-context";
 
 function App() {
   useEffect(() => {
-    // initializeFirebase();
     getUserNickname();
   }, []);
   return (
