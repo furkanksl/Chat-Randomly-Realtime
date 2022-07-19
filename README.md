@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Demo
+
+A basic realtime chat app made with React and Firebase. You can find the demo [here](https://chat-randomly.netlify.app/).
+
+![demo-png](https://i.ibb.co/VgG7R98/Screen-Shot-2022-07-19-at-18-47-40.png)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
