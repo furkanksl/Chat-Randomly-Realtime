@@ -20,11 +20,11 @@
   width: fit-content;
   border-radius: 10px;
   min-width: 40px;
-  height: 100%;
   max-width: 300px;
   color: white;
   font-size: 16px;
   font-weight: 500;
+  text-align: left;
 }
 
 .chatBox p {
@@ -34,4 +34,19 @@
 .sender {
   color: darkblue;
   font-size: 10px;
+}
+
+.senderBox {
+  margin-left: auto !important;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+  background-color: cornflowerblue;
+  width: fit-content;
+  border-radius: 10px;
+  min-width: 40px;
+  max-width: 300px;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
 }

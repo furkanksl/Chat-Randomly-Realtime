@@ -11,10 +11,11 @@ import {
   query,
 } from "firebase/database";
 import initializeFirebase from "../base/fb.config";
+import { getUserNickname } from "../services/local.service";
 
 export default function ChatList() {
   const [isLoading, setIsLoading] = useState(true);
-  // const [messages, setMessages] = useState([]);
+  const [userNickname, setUserNickname] = useState("");
 
   const messagesEndRef = useRef(null);
 
@@ -32,13 +33,12 @@ export default function ChatList() {
 
   useEffect(() => {
     getAllMessages();
+    setUserNickname(getUserNickname());
+    // console.log(userNickname);
   }, []);
 
   async function getAllMessages() {
     const msgs = await getMessages();
-
-    // console.log(msgs);
-    // setMessages(msgs);
     setIsLoading(false);
     scrollToBottom();
   }
@@ -56,16 +56,15 @@ export default function ChatList() {
 
       scrollToBottom();
     });
-
-    scrollToBottom();
   }
 
   function convertResponseToArray(data) {
     var messages = [];
 
-    Object.values(data).forEach((item) => {
-      messages.push(JSON.parse(item));
-    });
+    if (data !== null)
+      Object.values(data).forEach((item) => {
+        messages.push(JSON.parse(item));
+      });
     // console.log(messages);
     return messages;
   }
@@ -80,7 +79,14 @@ export default function ChatList() {
         ? ""
         : messagesContext.messages.map((message, index) => {
             return (
-              <div key={index} className={styles.chatBox}>
+              <div
+                key={index}
+                className={
+                  userNickname === message.sender
+                    ? styles.senderBox
+                    : styles.chatBox
+                }
+              >
                 <p>{message.text}</p>
               </div>
             );
