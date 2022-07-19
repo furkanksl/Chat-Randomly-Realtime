@@ -1,0 +1,32 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 5px solid darkgray;
+  border-radius: 20px;
+  max-height: 500px;
+  height: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: cornflowerblue;
+}
+
+.desc {
+  font-size: 1rem;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.madeBy {
+  margin-top: auto;
+}
+
+.madeBy a {
+  color: cornflowerblue;
+  font-weight: bold;
+}
